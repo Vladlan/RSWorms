@@ -103,33 +103,4 @@ export default class LoadingPage {
 
         return element;
     }
-
-    // constructor() {
-    //     if (LoadingPage._instance) return LoadingPage._instance;
-    //     LoadingPage._instance = this;
-    // }
-
-    // start(max: number, autoClear = true): LoadingPage {
-    //     this.clear();
-    //     this._autoClear = autoClear;
-    //     this._max = max;
-    //     this._element = this.createElement();
-    //     document.body.append(this._element);
-    //     return this;
-    // }
-    // tick(currentValue: number) {
-    //     if (currentValue >= this._max && this._autoClear) {
-    //         this.clear();
-    //         return;
-    //     }
-    //     const process = (currentValue / this._max) * 100;
-    //     if (this._progressBar) {
-    //         this._progressBar.style.width = process + '%';
-    //     }
-    // }
-
-    // clear() {
-    //     this._max = 0;
-    //     this._element?.remove();
-    // }
 }

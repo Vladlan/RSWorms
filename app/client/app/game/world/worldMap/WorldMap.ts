@@ -213,9 +213,6 @@ export default class WorldMap {
                                 ctx.clearRect(x, y, 1, 1);
                             }
                         }
-                        // if(y === 200){
-                        //     ctx.fillRect(x, y, 1, 1);
-                        // }
                     }
                 }
 
