@@ -146,9 +146,6 @@ export default class CameraControllerHandler {
 
                 deltaX /= window.innerWidth;
                 deltaY /= window.innerHeight;
-
-                // this.controller.cameraAngles.deltaAlpha += deltaX * this._controller.speed;
-                // this.controller.cameraAngles.deltaTetha += deltaY * this._controller.speed;
             }
         };
 

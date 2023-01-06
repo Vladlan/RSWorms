@@ -7,15 +7,12 @@ import Loop from './loop/Loop';
 import SoundManager from '../soundManager/SoundManager';
 import GameplayManager from './gameplayManager/GameplayManager';
 import World from './world/World';
-// import Stats from 'three/examples/jsm/libs/stats.module';
 import FallenItem from './world/entity/fallenItem/FallenItem';
 import MultiplayerGameplayManager from './gameplayManager/MultiplayerGameplayManager';
-import App from '../App';
 import ClientSocket from '../clientSocket/ClientSocket';
 import { ESocketGameMessages, ISocketDoneLoadingMultiplayerGame } from '../../../ts/socketInterfaces';
 import User from '../User';
 import MultiplayerInterface from '../lobby/multiplayerInterface/MultiplayerInterface';
-// const stats = Stats();
 export default class GameManager {
     private options: IStartGameOptions;
     private world: World;
@@ -96,11 +93,9 @@ export default class GameManager {
             };
             ClientSocket.emit(ESocketGameMessages.loadingDone, data);
         }
-        // App.screen.appendChild(stats.dom);
     }
 
     private loop = () => {
-        // stats.update();
         const now = Date.now();
         const delta = (now - this.loops.timestamp) * 0.001;
         this.loops.timestamp = now;

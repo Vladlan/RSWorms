@@ -6,7 +6,7 @@ import UserManager from './managers/userManager/UserManager';
 export default class App {
     private app = express();
     private server = http.createServer(this.app);
-    private PORT: number = Number(process.env.PORT) || 3000;
+    private PORT = Number(process.env.PORT) || 3000;
     private socketManager = new SocketsManager(this.server);
     private usersManager = new UserManager();
     public start() {

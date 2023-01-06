@@ -8,33 +8,33 @@ export default class GameCamera {
     private camera = new PerspectiveCamera(EConstants.cameraFov, window.innerWidth / window.innerHeight, 1, 5000);
     private position = new Point3(0, 0, 5);
     private target = new Point3(0, 0, 0);
-    private controller = new CameraController(this.position, this.target);
+    private cameraController = new CameraController(this.position, this.target);
 
     public getCamera() {
         return this.camera;
     }
 
     public setEventsHandler(element: HTMLElement) {
-        this.controller.setEventsHandler(element);
+        this.cameraController.setEventsHandler(element);
     }
 
     public setBorders(x: number, y: number, width: number, height: number) {
-        this.controller.setBorders(x, y, width, height);
+        this.cameraController.setBorders(x, y, width, height);
     }
 
     public setMaxCameraZoom(worldSize: EWorldSizes) {
         this.camera.far = worldSize * 2.5;
         this.camera.updateProjectionMatrix();
-        this.controller.setMaxCameraZoom(worldSize * 1.5);
+        this.cameraController.setMaxCameraZoom(worldSize * 1.5);
     }
 
     public update: TLoopCallback = (time) => {
-        this.controller.update(time);
+        this.cameraController.update(time);
         this.camera.position.set(this.position.x, this.position.y, this.position.z);
         this.camera.lookAt(this.target.x, this.target.y, this.target.z);
     };
 
     public moveTo(point: Point2) {
-        this.controller.moveTo(point);
+        this.cameraController.moveTo(point);
     }
 }

@@ -258,7 +258,7 @@ export default class Game extends ManagerItem {
                 };
 
                 this.sendAll(ESocketGameMessages.allPlayersLoaded, data);
-                const isFinished = this.sendPreTurnData();
+                this.sendPreTurnData();
             }
         }
     }
@@ -284,7 +284,6 @@ export default class Game extends ManagerItem {
     public removeUser(name: string) {
         const index = Object.keys(this.teams).indexOf(name);
         if (index != -1) {
-            const user = this.users[index];
             delete this.teams[name];
             this.users.splice(index, 1);
             delete this.playersLoadedGameStates[name];

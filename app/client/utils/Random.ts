@@ -1,20 +1,18 @@
+const M_VAL = 4294967296;
+const A_VAL = 1664525;
+const C_VAL = 1013904223;
 export default class Random {
-    private m = 4294967296;
-    private a = 1664525;
-    private c = 1013904223;
-    private step = 0;
-
     private seed: number;
     private z: number;
 
     constructor(seed = Math.random()) {
         this.seed = seed;
-        this.z = (this.a * this.seed + this.c) % this.m;
+        this.z = (A_VAL * this.seed + C_VAL) % M_VAL;
     }
 
     get() {
-        this.z = (this.a * this.z + this.c) % this.m;
-        return this.z / this.m;
+        this.z = (A_VAL * this.z + C_VAL) % M_VAL;
+        return this.z / M_VAL;
     }
 
     getFromMinus() {

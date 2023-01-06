@@ -28,16 +28,15 @@ export default class AssetsManager {
             }
 
             this.wormTextures = new WormTextures();
-            await this.wormTextures.load();
-
             this.weaponTextures = new WeaponTextures();
-            await this.weaponTextures.load();
-
             this.bulletTextures = new BulletTextures();
-            await this.bulletTextures.load();
-
             this.effectTextures = new EffectTextures();
-            await this.effectTextures.load();
+            await Promise.all([
+                this.wormTextures.load(),
+                this.weaponTextures.load(),
+                this.bulletTextures.load(),
+                this.effectTextures.load(),
+            ]);
 
             res(true);
         });

@@ -1,5 +1,5 @@
 import { Scene } from 'three';
-import { EBullets, EFallenObjects, ELang, ESizes } from '../../../../../ts/enums';
+import { EFallenObjects, ELang, ESizes } from '../../../../../ts/enums';
 import { IFallenItemConstructor } from '../../../../../ts/interfaces';
 import {
     ESocketGameMessages,
@@ -16,7 +16,6 @@ import MultiplayerGameplayManager from '../../gameplayManager/MultiplayerGamepla
 import WorldMap from '../worldMap/WorldMap';
 import Entity from './Entity';
 import Aidkit from './fallenItem/aidkit/Aidkit';
-import Barrel from './fallenItem/barrel/Barrel';
 import Bullet from './worm/weapon/bullet/Bullet';
 import Worm from './worm/Worm';
 

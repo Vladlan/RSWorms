@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "webpack-dev": "webpack --watch --mode production",
-    "serve": "npx nodemon dist/app",
+    "serve": "npx nodemon --watch -- dist/app.js",
     "start": "npm-run-all --parallel webpack-dev serve"
   },
   "repository": {

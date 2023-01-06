@@ -125,20 +125,7 @@ export default class LobbyHomePage extends PageElement {
     private startFastGame() {
         App.screen.innerHTML = '';
         const seed = Math.random();
-        // const seed = 0.7135371756374531;
-        // const seed = 0.7972989657842342;
-        // const seed = 0.7190317696597344;
-        // const seed = 0.4884739715122959;
 
-        //worms bug
-        //const seed = 0.6469262503466888;
-        // const seed = 0.711119400099296;
-        // const seed = 0.4743319884630075;
-        // const seed = 0.8253192090559442;
-        // const seed = 0.2921779319246529;
-        // const seed = 0.5464200270095712;
-        // const seed = 0.11259509204096174;
-        // const seed = 0.5964694338381447;
         console.log('Seed: ', seed);
         App.startGame({
             texture: EMapPacksNames.moon,
@@ -154,16 +141,12 @@ export default class LobbyHomePage extends PageElement {
             teams: [
                 {
                     name: getRandomTeamName(),
-                    // worms:
-                    //     this.memberNames.length !== 0
-                    //         ? this.memberNames
-                    //         : new Array(6).fill(1).map((el) => getRandomMemberName()),
-                    worms: new Array(4).fill(1).map((el) => getRandomMemberName()),
+                    worms: new Array(4).fill(1).map(() => getRandomMemberName()),
                     lang: ELang.rus,
                 },
                 {
                     name: getRandomTeamName(),
-                    worms: new Array(4).fill(1).map((el) => getRandomMemberName()),
+                    worms: new Array(4).fill(1).map(() => getRandomMemberName()),
                     lang: ELang.eng,
                 },
             ],
